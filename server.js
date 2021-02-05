@@ -1,8 +1,7 @@
 import express from 'express'
 import { createServer } from 'http';
 import * as io from "socket.io"
-import Factions from './classes/factions.js'
-import Words from './classes/words.js'
+import GameData from './classes/gameData';
 
 const app = express();
 const server = createServer(app);
@@ -44,11 +43,9 @@ socketio.on("connection", socket => {
 server.listen(port, () => console.log(`server listening at http://localhost:${port}`));
 
 function initRoomData(room) {
-  const words = Words.getGameSet();
-  const factions = Factions.getGameSet();
+  const gameData = GameData.getGameData();
   roomData.push({
     code: room,
-    words,
-    factions,
+    data: gameData,
   })
 }
