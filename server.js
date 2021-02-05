@@ -6,7 +6,11 @@ import Words from './classes/words.js'
 
 const app = express();
 const server = createServer(app);
-const socketio = new io.Server(server);
+const socketio = new io.Server(server, {
+  cors: {
+    origin: '*',
+  }
+});
 const port = process.env.PORT || 3001;
 const roomData = [];
 
