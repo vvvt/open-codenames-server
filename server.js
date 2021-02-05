@@ -1,7 +1,7 @@
 import express from 'express'
 import { createServer } from 'http';
 import * as io from "socket.io"
-import GameData from './classes/gameData';
+import GameData from './classes/gameData.js';
 
 const app = express();
 const server = createServer(app);
