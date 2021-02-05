@@ -32,7 +32,10 @@ socketio.on("connection", socket => {
     callback(data)
   });
   socket.on("turn", data => {
-    socket.to(socket.rooms[0])
+    const rooms = Array.from(socket.rooms);
+    const currentRoom = rooms[rooms.length - 1];
+    console.log("Got turn data from Client", currentRoom);
+    socket.to(currentRoom).emit("turn", data);
   })
 
   socket.on("disconnect", (reason) => {
