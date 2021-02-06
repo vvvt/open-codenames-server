@@ -37,6 +37,8 @@ socketio.on("connection", socket => {
   socket.on("turn", data => {
     const rooms = Array.from(socket.rooms);
     const currentRoom = rooms[rooms.length - 1];
+    const currentRoomData = roomData.find(room => room.code === currentRoom)
+    if (currentRoomData) currentRoomData.data = data;
     socketio.to(currentRoom).emit("turn", data);
   })
 
