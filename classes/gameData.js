@@ -5,7 +5,7 @@ export default class GameData {
 
     static getGameData() {
         let set = [[], [], [], [], []];
-        let start = Math.floor(Math.random() + 0.5) ? 1 : 2;
+        let start = Math.floor(Math.random() + 0.5) ? 1 : 0;
         let words = [...WORDS];
 
         let factions = [
