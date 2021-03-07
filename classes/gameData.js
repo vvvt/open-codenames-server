@@ -27,6 +27,7 @@ export default class GameData {
                 )[0];
                 set[i][j] = {
                     word,
+                    type: this.fromID(id).name,
                     turned: false
                 };
             }
