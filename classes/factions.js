@@ -19,7 +19,7 @@ export default class Factions {
                     Math.floor(Math.random() * factions.length),
                     1
                 )[0]
-                set[i][j] = this.fromID(id).color;
+                set[i][j] = this.fromID(id).name;
             }
         }
         return set;
@@ -29,22 +29,18 @@ export default class Factions {
 const FACTIONS = Object.freeze([
     {
         id: 0,
-        name: 'Neutral',
-        color: '#cec69d',
+        name: 'neutral',
     },
     {
         id: 1,
-        name: 'Blau',
-        color: '#6cbbff',
+        name: 'blue',
     },
     {
         id: 2,
-        name: 'Rot',
-        color: '#ff736c',
+        name: 'red',
     },
     {
         id: 3,
-        name: 'Assassin',
-        color: '#2d2d2d',
+        name: 'assassin',
     },
 ]);
