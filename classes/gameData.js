@@ -26,7 +26,6 @@ export default class GameData {
                     1
                 )[0];
                 set[i][j] = {
-                    color: this.fromID(id).color,
                     word,
                     turned: false
                 };
@@ -39,23 +38,19 @@ export default class GameData {
 const FACTIONS = Object.freeze([
     {
         id: 0,
-        name: 'Neutral',
-        color: '#cec69d',
+        name: 'neutral',
     },
     {
         id: 1,
-        name: 'Blau',
-        color: '#6cbbff',
+        name: 'blue',
     },
     {
         id: 2,
-        name: 'Rot',
-        color: '#ff736c',
+        name: 'red',
     },
     {
         id: 3,
-        name: 'Assassin',
-        color: '#2d2d2d',
+        name: 'assassin',
     },
 ]);
 
